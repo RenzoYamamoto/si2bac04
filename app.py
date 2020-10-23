@@ -6,21 +6,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def nao_entre_em_panico():
-    primos = "2"
-    num =  3
-    cont = 0
-    primo = True
-    while(cont < 99):
-        for i in range(2, num-1, 1 ):
-            if num % i == 0:
-                primo = False
-        if primo:
-            primos += "," + str(num)
-            cont += 1
-        num += 1
-        primo = True
+    a = 0
+    b = 1
+    c = 0
+    retorno = ""
+    for cont in range(50):
+        c = a
+        a = b + a
+        b = c
+        retorno += str(a) + ","
 
-    return primos
+    return retorno
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
