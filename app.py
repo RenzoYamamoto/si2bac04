@@ -6,8 +6,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def nao_entre_em_panico():
-    primos =  "2"
-    cont = 3
+    primos = "2"
+    num =  3
     cont = 0
     primo = True
     while(cont < 99):
